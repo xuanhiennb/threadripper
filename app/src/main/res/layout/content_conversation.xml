@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#E9EDED"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingBottom="@dimen/space5"
+        android:paddingLeft="@dimen/space10"
+        android:paddingRight="@dimen/space5"
+        android:paddingTop="@dimen/space5">
+
+        <ImageButton
+            android:id="@+id/imgBtnSend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_grey_circle"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:src="@drawable/ic_action_send"
+            android:stateListAnimator="@null" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/imgBtnSend"
+            android:background="@drawable/bg_white_rounded">
+
+            <LinearLayout
+                android:id="@+id/lnButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnAttachChatImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/btn_transparent_circle"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_add_photo_alternate" />
+
+                <ImageButton
+                    android:id="@+id/btnCaptureImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/btn_transparent_circle"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_linked_camera" />
+
+                <ImageButton
+                    android:id="@+id/btnAttachFile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/btn_transparent_circle"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_attach_file" />
+
+                <ImageButton
+                    android:id="@+id/btnShowButtons"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btn_accent_circle"
+                    android:foregroundGravity="center"
+                    android:padding="3dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_action_arrow_right_white" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/lnButtons"
+                android:background="@android:color/transparent"
+                android:hint="Enter your message"
+                android:inputType="textMultiLine"
+                android:lineSpacingMultiplier="1.5"
+                android:maxLines="6"
+                android:minHeight="40dp"
+                android:padding="@dimen/space5"
+                android:scrollbars="vertical"
+                android:textAppearance="@style/Light"
+                android:textColor="@color/colorTextBlack"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="@dimen/h3" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/rivImageIsPickedOrCaptured"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="@dimen/space5"
+                android:layout_toEndOf="@id/lnButtons"
+                android:layout_toRightOf="@id/lnButtons"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_image_chat"
+                android:visibility="gone"
+                app:riv_border_color="#E9ECEC"
+                app:riv_border_width="1dp"
+                app:riv_corner_radius="20dp" />
+
+            <TextView
+                android:id="@+id/filePicked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/lnButtons"
+                android:layout_toRightOf="@id/lnButtons"
+                android:drawableLeft="@drawable/ic_action_attachment_horizontal"
+                android:drawableStart="@drawable/ic_action_attachment_horizontal"
+                android:drawablePadding="5dp"
+                android:textStyle="bold"
+                android:textAppearance="@style/Light"
+                android:textSize="@dimen/h3"
+                android:text="filename.pdf"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvMessages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rl_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="25dp"
+        android:overScrollMode="never" />
+
+
+    <TextView
+        android:id="@+id/tvUserTyping"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignTop="@id/rl_bottom"
+        android:layout_marginTop="-25dp"
+        android:background="#fff"
+        android:ellipsize="middle"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:singleLine="true"
+        android:text="Alice is typing..." />
+
+    <TextView
+        android:id="@+id/tvCheckConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Connection is established!"
+        android:visibility="gone" />
+</RelativeLayout>

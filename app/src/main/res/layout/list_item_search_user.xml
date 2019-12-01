@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_photo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/space10"
+        android:layout_marginRight="@dimen/space10">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cirImgUserAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/placeholder_user_avatar" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/rl_photo"
+        android:background="@drawable/bg_bottom_grey"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/space10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/lnButtons"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDisplayName"
+                    style="@style/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="Laura Owens Laura Owens"
+                    android:textAppearance="@style/Light" />
+
+                <TextView
+                    android:id="@+id/tvUsername"
+                    style="@style/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="\@laura"
+                    android:textAppearance="@style/ExtraLight"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:paddingRight="15dp"
+                android:paddingEnd="15dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical">
+
+                <CheckBox
+                    android:id="@+id/cbSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

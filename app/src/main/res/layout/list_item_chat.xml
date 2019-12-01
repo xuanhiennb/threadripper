@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@drawable/bg_item_list"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_photo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/space10"
+        android:layout_marginRight="@dimen/space10">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cirImgUserAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/placeholder_user_avatar" />
+
+        <View
+            android:id="@+id/online_indicator"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/bg_online" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/rl_photo"
+        android:background="@drawable/bg_bottom_grey"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/space10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                style="@style/h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Laura Owens, Laura Owens, Laura Owens, Laura Owens, Laura Owens"
+                android:textAppearance="@style/Light"
+                />
+
+            <TextView
+                android:id="@+id/tv_last_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_user_name"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Hi, Joe, looks great! :) Hi, Joe, looks great! :) Hi, Joe, looks great! :) Hi, Joe, looks great! :)"
+                android:textAppearance="@style/ExtraLight"
+                android:textColor="@color/colorTextInfo"
+                android:textSize="@dimen/h3" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="5:04pm"
+                android:textAppearance="@style/ExtraLight"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/tvNotiCount"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/btn_accent_circle"
+                android:gravity="center"
+                android:text="46"
+                android:textAppearance="@style/ExtraLight"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/h5" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

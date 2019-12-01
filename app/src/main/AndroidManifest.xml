@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.chatapp.threadripper">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity
+            android:name=".Splash"
+            android:theme="@style/AppThemeFull">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".authenticated.ProfileSettingsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".authenticated.SearchUsersActivity"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".authenticated.LayoutFragmentActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.Trans" />
+        <activity
+            android:name=".authenticated.ConversationActivity"
+            android:theme="@style/AppTheme.Trans"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".authentication.LoginActivity"
+            android:theme="@style/AppThemeFull" />
+        <activity
+            android:name=".authentication.SignUpActivity"
+            android:theme="@style/AppThemeFull" />
+        <activity
+            android:name=".authentication.ForgotPasswordActivity"
+            android:theme="@style/AppThemeFull" />
+        <activity
+            android:name=".authenticated.VideoCallActivity"
+            android:theme="@style/AppThemeFull"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".authenticated.PhotoViewActivity"
+            android:theme="@style/AppThemeFull"
+            android:launchMode="singleTask"/>
+
+        <activity
+            android:name=".authenticated.VideoChatViewActivity"
+            android:launchMode="singleTask" />
+
+        <service
+            android:name=".services.SocketService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="" />
+
+        <receiver
+            android:name=".receivers.SocketReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="" />
+
+        <receiver android:name=".receivers.NetworkChangeReceiver">
+            <intent-filter>
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
