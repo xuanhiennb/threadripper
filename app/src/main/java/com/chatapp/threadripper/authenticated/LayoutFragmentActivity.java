@@ -17,7 +17,6 @@ import com.chatapp.threadripper.api.CacheService;
 import com.chatapp.threadripper.api.SocketManager;
 import com.chatapp.threadripper.authenticated.fragments.FragmentMessagesChat;
 import com.chatapp.threadripper.authenticated.fragments.FragmentVideoCallList;
-import com.chatapp.threadripper.authenticated.fragments.PersonFragment;
 import com.chatapp.threadripper.authentication.LoginActivity;
 import com.chatapp.threadripper.utils.Constants;
 import com.chatapp.threadripper.utils.ImageLoader;
