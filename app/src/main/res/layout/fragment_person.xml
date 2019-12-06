@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTextWhite"
+    >
+
+
+    <ImageView
+        android:id="@+id/imgCover"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp132"
+        android:scaleType="fitXY"
+        android:src="@drawable/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        />
+
+    <include
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <TextView
+        android:id="@+id/imgIcEditCover"
+        android:layout_width="@dimen/dp70"
+        android:layout_height="@dimen/dp30"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/dp8"
+        android:background="@drawable/border_ic_edit_cover"
+        android:drawableLeft="@drawable/ic_camera"
+        android:drawablePadding="@dimen/dp8"
+        android:fontFamily="@font/helveticaneuemedium"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp8"
+        android:text="Sửa"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/imgCover"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/imgAvatar"
+        app:layout_constraintBottom_toBottomOf="@+id/imgCover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgCover"
+        android:layout_width="@dimen/dp98"
+        android:layout_height="@dimen/dp98">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|bottom"
+            android:src="@drawable/view2"
+            />
+
+        <ImageView
+            android:id="@+id/ic_edit_avatar"
+            android:layout_margin="@dimen/dp4"
+            android:background="#C5BBBB"
+            android:layout_gravity="end|bottom"
+            android:layout_width="@dimen/dp18"
+            android:layout_height="@dimen/dp18"
+            app:srcCompat="@drawable/ic_camera_edit_avatar"/>
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/txtPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+
+        android:fontFamily="@font/helveticaneuemedium"
+        android:text="Minh ngọc"
+        android:textColor="#222222"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgAvatar" />
+
+    <ImageView
+        android:id="@+id/imgEditPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        app:srcCompat="@drawable/ic_edit_person"
+        app:layout_constraintBottom_toTopOf="@id/txtEditPerson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPerson" />
+
+    <TextView
+        android:id="@+id/txtEditPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sửa thông tin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgEditPerson" />
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditPerson"
+        />
+    <android.support.v4.view.ViewPager
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+
+        android:id="@+id/viewPager_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+</android.support.constraint.ConstraintLayout>

@@ -17,6 +17,7 @@ import com.chatapp.threadripper.api.CacheService;
 import com.chatapp.threadripper.api.SocketManager;
 import com.chatapp.threadripper.authenticated.fragments.FragmentMessagesChat;
 import com.chatapp.threadripper.authenticated.fragments.FragmentVideoCallList;
+import com.chatapp.threadripper.authenticated.fragments.PersonFragment;
 import com.chatapp.threadripper.authentication.LoginActivity;
 import com.chatapp.threadripper.utils.Constants;
 import com.chatapp.threadripper.utils.ImageLoader;
@@ -138,6 +139,12 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
         FragmentTransaction ft;
 
         switch (item.getItemId()) {
+            case R.id.nav_header:
+                PersonFragment personFragment = new PersonFragment();
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frameLayout, personFragment, Constants.FRAGMENT_TAG_MESSAGE_CHAT_LIST).commit();
+
+                break;
             case R.id.nav_chats:
                 FragmentMessagesChat fragmentMessagesChat = new FragmentMessagesChat();
                 ft = getSupportFragmentManager().beginTransaction();

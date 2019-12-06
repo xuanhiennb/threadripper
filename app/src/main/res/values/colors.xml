@@ -13,7 +13,7 @@
     <color name="colorRippleView">#ff7f09</color>
     <color name="colorTargetPrompt">#dee10101</color>
     <color name="colorTargetPromptFocal">#1278d7</color>
-
+    <color name="text_white">#FFFFFF</color>
 
     <!--Override Sweet Alert Confirm -->
     <color name="blue_btn_bg_pressed_color">#96BFD2</color>

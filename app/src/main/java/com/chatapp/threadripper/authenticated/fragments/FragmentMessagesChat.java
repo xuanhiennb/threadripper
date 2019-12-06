@@ -246,7 +246,7 @@ public class FragmentMessagesChat extends Fragment implements SocketReceiver.OnC
             public void onResponse(Call<List<Conversation>> call, Response<List<Conversation>> response) {
                 if (response.isSuccessful()) {
                     ArrayList<Conversation> items = (ArrayList<Conversation>) response.body();
-                    if (items == null || items.isEmpty()) {
+                    if (items == null ||  items.isEmpty()) {
                         // no do anything
                     } else {
                         for (Conversation c : items) {
