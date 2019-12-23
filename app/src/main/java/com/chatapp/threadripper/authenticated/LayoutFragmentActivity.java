@@ -10,11 +10,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.chatapp.threadripper.R;
 import com.chatapp.threadripper.api.CacheService;
 import com.chatapp.threadripper.api.SocketManager;
+import com.chatapp.threadripper.authenticated.activity.PersonalActivity;
 import com.chatapp.threadripper.authenticated.fragments.FragmentMessagesChat;
 import com.chatapp.threadripper.authenticated.fragments.FragmentVideoCallList;
 import com.chatapp.threadripper.authentication.LoginActivity;
@@ -63,6 +65,16 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerview = navigationView.getHeaderView(0);
+        LinearLayout hearder = headerview.findViewById(R.id.nav_header);
+        hearder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LayoutFragmentActivity.this, PersonalActivity.class));
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
 
         navigationViewBottom = (NavigationView) findViewById(R.id.nav_view_bottom);
         navigationViewBottom.setNavigationItemSelectedListener(this);
@@ -138,11 +150,10 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
         FragmentTransaction ft;
 
         switch (item.getItemId()) {
-            case R.id.nav_header:
-                PersonFragment personFragment = new PersonFragment();
-                ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frameLayout, personFragment, Constants.FRAGMENT_TAG_MESSAGE_CHAT_LIST).commit();
-
+            case R.id.nav_news:
+                break;
+            case R.id.nav_personal:
+                startActivity(new Intent(this, PersonalActivity.class));
                 break;
             case R.id.nav_chats:
                 FragmentMessagesChat fragmentMessagesChat = new FragmentMessagesChat();

@@ -8,6 +8,15 @@
         <!--app:actionViewClass="android.widget.TextView"-->
         <!--android:icon="@drawable/ic_action_contacts"-->
         <!--android:title="Contacts" />-->
+        <item android:id="@+id/nav_news"
+            android:title="Bảng tin"
+            app:actionViewClass="android.widget.TextView"
+            android:icon="@drawable/ic_action_chat"/>
+        <item android:id="@+id/nav_personal"
+            android:title="Trang cá nhân"
+            app:actionViewClass="android.widget.TextView"
+            android:icon="@drawable/ic_action_chat"/>
+
         <item
             android:id="@+id/nav_chats"
             app:actionViewClass="android.widget.TextView"
