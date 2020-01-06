@@ -225,16 +225,32 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
             }
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            imgBtnSend.setOnClickListener(view -> handleClickButtonSend());
-        }
+        imgBtnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleClickButtonSend();
+            }
+        });
+
         btnCaptureImage.setOnClickListener(view -> handleCaptureCamera());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            btnAttachFile.setOnClickListener(view -> handleAttachFile());
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            btnAttachChatImage.setOnClickListener(view -> handleAttachImage());
-        }
+        btnAttachFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleAttachFile();
+            }
+        });
+        btnAttachChatImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleAttachImage();
+            }
+        });
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            btnAttachFile.setOnClickListener(view -> handleAttachFile());
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            btnAttachChatImage.setOnClickListener(view -> handleAttachImage());
+//        }
 
         btnShowButtons.setOnClickListener(view -> showButtonsBar());
     }
@@ -253,15 +269,16 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         btnAttachFile.setVisibility(View.VISIBLE);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     void handleAttachFile() {
-        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_READ_EXTERNAL);
-            return;
-        }
-        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_WRITE_EXTERNAL);
-            return;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_READ_EXTERNAL);
+//            return;
+//        }
+//        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_WRITE_EXTERNAL);
+//            return;
+//        }
         }
 
         btnAttachFile.setImageResource(R.drawable.ic_action_attach_file_accent);
@@ -272,7 +289,6 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         startActivityForResult(Intent.createChooser(intent, "Select file"), Constants.REQUEST_CODE_PICK_FILE);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     void handleClickButtonSend() {
         if (edtMessage.getVisibility() == View.VISIBLE) { // send a message text
             handleSendMessage();
@@ -299,15 +315,16 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     void handleAttachImage() {
-        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_READ_EXTERNAL);
-            return;
-        }
-        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_WRITE_EXTERNAL);
-            return;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_READ_EXTERNAL);
+//            return;
+//        }
+//        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_WRITE_EXTERNAL);
+//            return;
+//        }
         }
 
         btnAttachChatImage.setImageResource(R.drawable.ic_action_add_photo_alternate_accent);
@@ -366,7 +383,7 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+
     void handleSendAttachImage() {
         edtMessage.setVisibility(View.VISIBLE);
         rivImageIsPickedOrCaptured.setImageResource(R.drawable.placeholder_image_chat);

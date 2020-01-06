@@ -211,7 +211,7 @@ public class SocketService extends Service {
     @SuppressLint("CheckResult")
     public void sendMessage(Message message) {
         message.setToken(Preferences.getChatAuthToken());
-
+        Log.d(TAG,"call send");
         client.send("/queue/sendMessage", new Gson().toJson(message))
                 .compose(applySchedulers())
                 .subscribe(

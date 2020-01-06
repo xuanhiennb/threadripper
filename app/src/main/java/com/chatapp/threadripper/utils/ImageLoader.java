@@ -1,6 +1,7 @@
 package com.chatapp.threadripper.utils;
 
 
+import android.util.Log;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ public class ImageLoader {
     }
 
     public static void loadImageChatMessage(View view, String url) {
+//        Log.d(url," url image");
         Picasso.get().load(safetyImageURL(url))
                 .placeholder(R.drawable.placeholder_image_chat)
                 .error(R.drawable.placeholder_image_chat)
