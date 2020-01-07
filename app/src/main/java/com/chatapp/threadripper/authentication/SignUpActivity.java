@@ -47,7 +47,7 @@ public class SignUpActivity extends BaseActivity {
     }
 
     private void initViews() {
-        edtUsername = (EditText) findViewById(R.id.edtDisplayName);
+        edtUsername = (EditText) findViewById(R.id.edtUserName);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         edtConfirmPassword = (EditText) findViewById(R.id.edtConfirmPassword);

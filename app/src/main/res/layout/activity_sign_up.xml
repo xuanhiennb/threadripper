@@ -57,7 +57,7 @@
         android:padding="25dp">
 
         <EditText
-            android:id="@+id/edtDisplayName"
+            android:id="@+id/edtUserName"
             style="@style/EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +65,8 @@
             android:drawableLeft="@drawable/ic_action_account_box_accent"
             android:drawablePadding="8dp"
             android:hint="Username"
-            android:inputType="text" />
+            android:inputType="text"
+            tools:ignore="DuplicateIds" />
 
         <EditText
             android:id="@+id/edtEmail"

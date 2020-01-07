@@ -54,12 +54,15 @@
             android:theme="@style/AppTheme.Trans" />
         <activity
             android:name=".authentication.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppThemeFull" />
         <activity
             android:name=".authentication.SignUpActivity"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppThemeFull" />
         <activity
             android:name=".authentication.ForgotPasswordActivity"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppThemeFull" />
         <activity
             android:name=".authenticated.VideoCallActivity"
