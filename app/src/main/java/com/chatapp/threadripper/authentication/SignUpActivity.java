@@ -1,13 +1,16 @@
 package com.chatapp.threadripper.authentication;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.andexert.library.RippleView;
 import com.chatapp.threadripper.BaseActivity;
@@ -28,6 +31,7 @@ public class SignUpActivity extends BaseActivity {
     Button btnSignUp;
     RippleView btnBack;
     EditText edtUsername, edtEmail, edtPassword, edtConfirmPassword, edtDisplayName;
+    LinearLayout linearParent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +45,22 @@ public class SignUpActivity extends BaseActivity {
 
         initViews();
 
-        configHideKeyboardOnTouchOutsideEditText(findViewById(R.id.wrapperView));
+//        configHideKeyboardOnTouchOutsideEditText(findViewById(R.id.wrapperView));
 
         initDetectNetworkStateChange();
     }
 
     private void initViews() {
+        linearParent = (LinearLayout) findViewById(R.id.wrapperView);
+        linearParent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager inputMethodManager = (InputMethodManager)
+                        view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                assert inputMethodManager != null;
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+        });
         edtUsername = (EditText) findViewById(R.id.edtUserName);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtPassword = (EditText) findViewById(R.id.edtPassword);

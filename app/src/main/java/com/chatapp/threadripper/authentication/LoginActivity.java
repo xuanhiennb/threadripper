@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.chatapp.threadripper.BaseActivity;
@@ -19,6 +20,7 @@ import com.chatapp.threadripper.api.CacheService;
 import com.chatapp.threadripper.authenticated.LayoutFragmentActivity;
 import com.chatapp.threadripper.models.ErrorResponse;
 import com.chatapp.threadripper.models.User;
+import com.chatapp.threadripper.utils.KeyboardUtils;
 import com.chatapp.threadripper.utils.Preferences;
 import com.chatapp.threadripper.utils.ShowToast;
 import com.chatapp.threadripper.utils.SweetDialog;
@@ -33,6 +35,7 @@ public class LoginActivity extends BaseActivity {
     Button btnLogin;
     TextView tvSignUp, tvForgot;
     EditText edtUsername, edtPassword;
+    LinearLayout linearParent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +48,8 @@ public class LoginActivity extends BaseActivity {
         changeStatusBarColor();
 
         initViews();
-
-        configHideKeyboardOnTouchOutsideEditText(findViewById(R.id.wrapperView));
+//
+//        configHideKeyboardOnTouchOutsideEditText(findViewById(R.id.wrapperView));
 
         initDetectNetworkStateChange();
     }
@@ -142,6 +145,13 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void initViews() {
+        linearParent = (LinearLayout) findViewById(R.id.wrapperView);
+        linearParent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                KeyboardUtils.hideSoftKeyboard(LoginActivity.this);
+            }
+        });
         edtUsername = (EditText) findViewById(R.id.edtDisplayName);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
 

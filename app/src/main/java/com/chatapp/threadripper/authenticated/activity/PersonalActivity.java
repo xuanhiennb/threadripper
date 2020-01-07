@@ -16,14 +16,14 @@ public class PersonalActivity extends BaseMainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal);
-        inietView();
+        initView();
 
     }
 
-    private void inietView() {
+    private void initView() {
         viewPager = (ViewPager) findViewById(R.id.vp_personal);
         tabLayout = (TabLayout) findViewById(R.id.tabs_personal);
-        setupToolbarWithBackButton(R.id.toolbar, "Trang cá nhân");
+        setupToolbar(R.id.toolbar, "Trang cá nhân");
         PersonalAdapter pagerAdapter = new PersonalAdapter(getSupportFragmentManager());
         pagerAdapter.addFragment(new DiaryFragment(), "Nhật ký");
         pagerAdapter.addFragment(new PictureFragment(), "Hình ảnh");
