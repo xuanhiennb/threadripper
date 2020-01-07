@@ -68,6 +68,7 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
 
         View headerview = navigationView.getHeaderView(0);
         LinearLayout hearder = headerview.findViewById(R.id.nav_header);
+
         hearder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

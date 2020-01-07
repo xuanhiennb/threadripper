@@ -3,7 +3,8 @@ package com.chatapp.threadripper.utils;
 import android.content.Context;
 import android.graphics.Color;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
+import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
+
 
 public class SweetDialog {
 

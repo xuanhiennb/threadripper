@@ -18,7 +18,7 @@ import com.chatapp.threadripper.utils.Constants;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class Splash extends AppCompatActivity {
+public class Splash extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class Splash extends AppCompatActivity {
             finish();
         }, 1 * 1000);
     }
+
 
     void initConfigRealmCache() {
         Realm.init(this);
