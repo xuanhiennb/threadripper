@@ -6,8 +6,6 @@ import android.support.v4.view.ViewPager;
 
 import com.chatapp.threadripper.R;
 import com.chatapp.threadripper.authenticated.BaseMainActivity;
-import com.chatapp.threadripper.authenticated.fragments.diary.DiaryFragment;
-import com.chatapp.threadripper.authenticated.fragments.picture.PictureFragment;
 
 public class PersonalActivity extends BaseMainActivity {
     ViewPager viewPager;
@@ -16,18 +14,20 @@ public class PersonalActivity extends BaseMainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal);
-        initView();
+//        initView();
+        setupToolbarWithBackButton(R.id.toolbar, "Trang cá nhân");
 
     }
 
-    private void initView() {
-        viewPager = (ViewPager) findViewById(R.id.vp_personal);
-        tabLayout = (TabLayout) findViewById(R.id.tabs_personal);
-        setupToolbar(R.id.toolbar, "Trang cá nhân");
-        PersonalAdapter pagerAdapter = new PersonalAdapter(getSupportFragmentManager());
-        pagerAdapter.addFragment(new DiaryFragment(), "Nhật ký");
-        pagerAdapter.addFragment(new PictureFragment(), "Hình ảnh");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-    }
+//    private void initView() {
+//        viewPager = (ViewPager) findViewById(R.id.vp_personal);
+//        tabLayout = (TabLayout) findViewById(R.id.tabs_personal);
+//        setupToolbarWithBackButton(R.id.toolbar, "Trang cá nhân");
+//
+//        PersonalAdapter pagerAdapter = new PersonalAdapter(getSupportFragmentManager());
+//        pagerAdapter.addFragment(new DiaryFragment(), "Nhật ký");
+//        pagerAdapter.addFragment(new PictureFragment(), "Hình ảnh");
+//        viewPager.setAdapter(pagerAdapter);
+//        tabLayout.setupWithViewPager(viewPager);
+//    }
 }

@@ -4,7 +4,7 @@
     android:id="@+id/wrapperView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient_red"
+    android:background="@color/colorTextWhite"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.chatapp.threadripper.authentication.LoginActivity">
@@ -32,7 +32,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp150"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/logohvktmm" />
 
 
             <EditText
@@ -76,7 +76,7 @@
                         android:layout_alignParentLeft="true"
                         android:text="Forgot password?"
                         android:textAppearance="@style/Light"
-                        android:textColor="#fff" />
+                        android:textColor="@color/colorTextBlack" />
 
                     <TextView
                         android:id="@+id/tvSignUp"
@@ -85,11 +85,12 @@
                         android:layout_alignParentRight="true"
                         android:text="Create account?"
                         android:textAppearance="@style/Light"
-                        android:textColor="#fff" />
+                        android:textColor="@color/colorTextBlack" />
 
                 </RelativeLayout>
 
                 <Button
+                    android:background="@color/colorAccent"
                     android:id="@+id/btnLogin"
                     style="@style/ButtonYellow"
                     android:layout_width="match_parent"

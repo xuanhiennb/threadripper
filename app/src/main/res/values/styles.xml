@@ -113,4 +113,7 @@
         <item name="fontPath">font/Quicksand-Medium.ttf</item>
     </style>
 
+    <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorTextWhite</item>
+    </style>
 </resources>

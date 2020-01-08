@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.andexert.library.RippleView;
 import com.chatapp.threadripper.receivers.NetworkChangeReceiver;
 import com.chatapp.threadripper.utils.KeyboardUtils;
 import com.chatapp.threadripper.utils.ShowToast;
@@ -26,8 +27,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class BaseActivity extends AppCompatActivity {
     protected Toolbar toolbar;
-    TextView title;
+    TextView title, tvDisplayName;
     ImageView btnImgBack;
+    public RippleView rvCall, rvCallVideo;
 
     boolean doubleBackToExitPressedOnce = false;
     private BroadcastReceiver mNetworkReceiver;
@@ -112,6 +114,28 @@ public class BaseActivity extends AppCompatActivity {
 
     public void setupToolbarWithBackButton(int toolbarId, String titlePage) {
         setupToolbar(toolbarId, titlePage);
+
+        btnImgBack = (ImageView) findViewById(R.id.btnImgBack);
+        btnImgBack.setVisibility(View.VISIBLE);
+        btnImgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+    }
+
+    public void setUpToolbarConversation(int toolbarId, String displayName) {
+        toolbar = (Toolbar) findViewById(toolbarId);
+        setSupportActionBar(toolbar);
+        tvDisplayName = (TextView) findViewById(R.id.tv_displayname);
+        tvDisplayName.setText(displayName);
+        tvDisplayName.setVisibility(View.VISIBLE);
+        rvCall = (RippleView) findViewById(R.id.rvCall);
+        rvCallVideo = (RippleView) findViewById(R.id.rvCallVideo);
+        rvCall.setVisibility(View.VISIBLE);
+        rvCallVideo.setVisibility(View.VISIBLE);
+        getSupportActionBar().setTitle("");
 
         btnImgBack = (ImageView) findViewById(R.id.btnImgBack);
         btnImgBack.setVisibility(View.VISIBLE);

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorRedLight">#f23032</color>
-    <color name="colorRedDark">#a11920</color>
-    <color name="colorAccent">#df5409</color>
+    <color name="colorRedLight">#1876f2</color>
+    <color name="colorRedDark">#1876f2</color>
+    <color name="colorAccent">#1876f2</color>
     <color name="colorTextBlack">#252525</color>
     <color name="colorTextHint">#cacaca</color>
     <color name="colorTextInfo">#9b9b9b</color>

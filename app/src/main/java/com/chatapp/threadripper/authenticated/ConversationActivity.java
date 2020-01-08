@@ -12,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -72,7 +71,7 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
     private TextView filePicked;
     TextView tvUserTyping;
     private RippleView rvOptionMenu;
-
+    private RippleView rvCall, rvCallVideo;
     Set<String> typingUsername = new HashSet<>(); // use Set for unique username
 
     boolean isOnline;
@@ -95,8 +94,8 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
 
         getIntentData();
 
-        setupToolbarWithBackButton(R.id.toolbar, displayName);
-
+//        setupToolbarWithBackButton(R.id.toolbar, displayName);
+        setUpToolbarConversation(R.id.toolbar, displayName);
         initViews();
 
         initMoreSettings();
@@ -110,9 +109,23 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         initDetectNetworkStateChange();
 
         markReadAllMessages();
+
+        setRipperOnClickListener();
+    }
+
+    private void setRipperOnClickListener() {
+        rvCall.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+            @Override
+            public void onComplete(RippleView rippleView) {
+
+            }
+        });
     }
 
     void initMoreSettings() {
+        rvCall = (RippleView) findViewById(R.id.rvCall);
+        rvCallVideo = (RippleView) findViewById(R.id.rvCallVideo);
+
         rvOptionMenu = (RippleView) this.toolbar.findViewById(R.id.rvOptionMenu);
         rvOptionMenu.setVisibility(View.VISIBLE);
         rvOptionMenu.setOnRippleCompleteListener(view -> {
