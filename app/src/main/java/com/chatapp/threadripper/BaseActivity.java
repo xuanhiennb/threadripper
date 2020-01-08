@@ -164,7 +164,7 @@ public class BaseActivity extends AppCompatActivity {
 
         this.doubleBackToExitPressedOnce = true;
 
-        ShowToast.lengthShort(this, "Please click BACK again to exit");
+        ShowToast.lengthShort(this, "Nhấn lần nữa để thoát");
 
         new Handler().postDelayed(new Runnable() {
 

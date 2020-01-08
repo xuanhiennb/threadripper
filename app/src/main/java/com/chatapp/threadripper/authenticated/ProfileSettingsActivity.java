@@ -129,7 +129,6 @@ public class ProfileSettingsActivity extends BaseMainActivity {
         edtDisplayName.setInputType(InputType.TYPE_NULL);
         edtDisplayName.setCursorVisible(false);
 
-        tvUsername.setText(Preferences.getCurrentUser().getUsername());
         tvEmail.setText(Preferences.getCurrentUser().getEmail());
         edtDisplayName.setText(Preferences.getCurrentUser().getDisplayName());
 

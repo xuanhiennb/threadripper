@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".authenticated.activity.PersonalActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -21,30 +22,31 @@
     </android.support.design.widget.AppBarLayout>
 
     <ImageView
-        android:id="@+id/imgCover"
+        android:id="@+id/img_cover"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp132"
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
-        android:src="@drawable/view2"
+        android:src="@drawable/logohvktmm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar" />
+        app:layout_constraintTop_toBottomOf="@id/appbar" />
 
     <FrameLayout
-        android:id="@+id/imgAvatar"
+        android:id="@+id/frame"
         android:layout_width="@dimen/dp98"
         android:layout_height="@dimen/dp98"
-        app:layout_constraintBottom_toBottomOf="@+id/imgCover"
+        app:layout_constraintBottom_toBottomOf="@+id/img_cover"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgCover">
+        app:layout_constraintTop_toBottomOf="@+id/img_cover">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cv_avatar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center|bottom"
-            android:src="@drawable/view2" />
+            android:src="@drawable/placeholder_user_avatar" />
 
         <ImageView
             android:id="@+id/ic_edit_avatar"
@@ -58,7 +60,7 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/txtPerson"
+        android:id="@+id/tv_display_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
@@ -69,8 +71,9 @@
         android:textSize="@dimen/sp18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgAvatar"
+        app:layout_constraintTop_toBottomOf="@id/frame"
         tools:targetApi="jelly_bean" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rcv_personal"
@@ -79,23 +82,33 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPerson" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_display_name" />
+    
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_message_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp24"
+        android:layout_marginBottom="@dimen/dp36"
+        android:backgroundTint="@color/colorAccent"
+        app:srcCompat="@drawable/ic_order_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <!--    <android.support.design.widget.TabLayout-->
+    <!--        android:id="@+id/tabs_personal"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/txtPerson"-->
+    <!--        app:tabGravity="fill"-->
+    <!--        app:tabMode="fixed" />-->
 
-<!--    <android.support.design.widget.TabLayout-->
-<!--        android:id="@+id/tabs_personal"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtPerson"-->
-<!--        app:tabGravity="fill"-->
-<!--        app:tabMode="fixed" />-->
-
-<!--    <android.support.v4.view.ViewPager-->
-<!--        android:id="@+id/vp_personal"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tabs" />-->
-</android.support.constraint.ConstraintLayout>
+    <!--    <android.support.v4.view.ViewPager-->
+    <!--        android:id="@+id/vp_personal"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tabs" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

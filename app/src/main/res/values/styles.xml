@@ -113,6 +113,7 @@
 
     <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/colorTextWhite</item>
+<!--        <item name="android:windowBackground">@drawable/splash_background</item>-->
     </style>
     <style name="ThemeLogin" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/colorAccent</item>

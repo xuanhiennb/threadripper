@@ -2,7 +2,6 @@ package com.chatapp.threadripper.authenticated;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -113,13 +112,37 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         setRipperOnClickListener();
     }
 
-    private void setRipperOnClickListener() {
-        rvCall.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
-            @Override
-            public void onComplete(RippleView rippleView) {
+    private void handleStartCalling( boolean callVideoOrAudio) {
+        Intent intent = new Intent(this, VideoCallActivity.class);
 
-            }
-        });
+        User user = new User();
+        user.setUsername(displayName);
+        user.setPhotoUrl(avatar);
+        user.setDisplayName(displayName);
+        user.setPrivateConversationId(conversationId);
+
+        String channelId = "THREADRIPPER_CALL_"
+                + Preferences.getCurrentUser().getUsername() + "_"
+                + user.getUsername();
+
+        // CALLING_VIDEO_OR_AUDIO is not transfer correctly but EXTRA_VIDEO_CHANNEL_TOKEN does
+        // so I encode videocall and audio mode into the channelId
+        // VideoCallActivity will decode it
+
+        intent.putExtra(Constants.IS_CALLER_SIDE, true); // user who start a calling is a caller
+        intent.putExtra(Constants.USER_MODEL, user);
+        intent.putExtra(Constants.EXTRA_VIDEO_CHANNEL_TOKEN, encode(channelId, callVideoOrAudio));
+
+        startActivity(intent);
+    }
+
+    private String encode(String channelId, boolean isVideoMode) {
+        return channelId.concat(isVideoMode ? "1" : "0");
+    }
+
+    private void setRipperOnClickListener() {
+        rvCall.setOnRippleCompleteListener(rippleView -> handleStartCalling(false));
+        rvCallVideo.setOnRippleCompleteListener(rippleView -> handleStartCalling(true));
     }
 
     void initMoreSettings() {
@@ -170,6 +193,7 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         displayName = intent.getStringExtra(Constants.CONVERSATION_NAME);
         avatar = intent.getStringExtra(Constants.CONVERSATION_PHOTO);
         isOnline = intent.getBooleanExtra(Constants.CONVERSATION_IS_ONLINE, false);
+
     }
 
     void initViews() {
@@ -316,8 +340,9 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
-    void handleCaptureCamera() {
+//    @TargetApi(Build.VERSION_CODES.M)
+@SuppressLint("NewApi")
+void handleCaptureCamera() {
         btnCaptureImage.setImageResource(R.drawable.ic_action_linked_camera_accent);
 
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -528,7 +553,7 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
             handleReceivedMessage(message);
         }
 
-        rcvMessages.postDelayed(this::scrollToBottom, 300);
+        rcvMessages.postDelayed(this::scrollToBottom, 2000);
     }
 
     void handleReceivedMessage(Message message) {

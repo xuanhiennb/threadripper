@@ -24,8 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
         <activity android:name=".authenticated.activity.PersonalActivity"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppThemeFull"
             />
         <activity

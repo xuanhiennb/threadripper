@@ -63,6 +63,7 @@ dependencies {
     // Calligraphy: Fonts in Asset
     implementation 'uk.co.chrisjenx:calligraphy:2.2.0'
 
+
     // Picasso: Image loader with cache
     implementation 'com.squareup.picasso:picasso:2.71828'
 

@@ -10,7 +10,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.andexert.library.RippleView;
 import com.chatapp.threadripper.R;
@@ -55,10 +54,10 @@ public class VideoCallActivity extends BaseMainActivity implements SocketReceive
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_call);
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-        changeStatusBarColor();
+//        if (Build.VERSION.SDK_INT >= 21) {
+//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+//        }
+//        changeStatusBarColor();
         getIntentData();
         // Toast.makeText(this, "middle " + channelId, Toast.LENGTH_SHORT).show();
         initViews();
