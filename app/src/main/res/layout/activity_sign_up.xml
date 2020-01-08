@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wrapperView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/text_white"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:id="@+id/wrapperView"
     tools:context="com.chatapp.threadripper.authentication.SignUpActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
 
         <com.andexert.library.RippleView
             android:id="@+id/btnBack"
@@ -25,6 +26,7 @@
             app:rv_rippleDuration="100">
 
             <ImageView
+
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
@@ -32,123 +34,127 @@
                 android:src="@drawable/ic_action_back" />
 
         </com.andexert.library.RippleView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Create account"
             android:fontFamily="@font/helveticaneuemedium"
-            android:textColor="@color/colorTextWhite"
-            android:textSize="@dimen/sp26"/>
+            android:text="Đăng kí"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/sp20" />
 
 
     </RelativeLayout>
-<ScrollView
-    android:scrollbars="none"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/tvCheckConnection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="2dp"
-            android:text="Connection is established!"
-            android:visibility="gone" />
 
-        <ImageView
-            android:visibility="gone"
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp100"
-            android:layout_centerInParent="true"
-            android:src="@drawable/logohvktmm" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="25dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edtUserName"
-                style="@style/EditText"
+            <TextView
+                android:id="@+id/tvCheckConnection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:drawableLeft="@drawable/ic_action_account_box_accent"
-                android:drawablePadding="8dp"
-                android:hint="Username"
-                android:inputType="text"
-                tools:ignore="DuplicateIds"
-                android:drawableStart="@drawable/ic_action_account_box_accent" />
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="Connection is established!"
+                android:visibility="gone" />
 
-            <EditText
-                android:id="@+id/edtEmail"
-                style="@style/EditText"
+            <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:drawableLeft="@drawable/ic_action_emaill_accent"
-                android:drawablePadding="8dp"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:drawableStart="@drawable/ic_action_emaill_accent" />
+                android:layout_height="@dimen/dp100"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logohvktmm"
+                android:visibility="visible" />
 
-
-            <EditText
-                android:id="@+id/edtDisplayName"
-                style="@style/EditText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:drawableLeft="@drawable/ic_action_display_name_accent"
-                android:drawablePadding="8dp"
-                android:hint="Display Name"
-                android:inputType="text"
-                android:drawableStart="@drawable/ic_action_display_name_accent" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="25dp">
+
+                <EditText
+                    android:id="@+id/edtUserName"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:drawableStart="@drawable/ic_action_account_box_accent"
+                    android:drawableLeft="@drawable/ic_action_account_box_accent"
+                    android:drawablePadding="8dp"
+                    android:hint="Tên đăng nhập"
+                    android:inputType="text"
+                    tools:ignore="DuplicateIds" />
+
+                <EditText
+                    android:id="@+id/edtEmail"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:drawableStart="@drawable/ic_action_emaill_accent"
+                    android:drawableLeft="@drawable/ic_action_emaill_accent"
+                    android:drawablePadding="8dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
 
 
-            <EditText
-                android:id="@+id/edtPassword"
-                style="@style/EditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:drawableLeft="@drawable/ic_action_password_red"
-                android:drawablePadding="8dp"
-                android:hint="Password"
-                android:inputType="textPassword" />
+                <EditText
+                    android:id="@+id/edtDisplayName"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:drawableStart="@drawable/ic_action_display_name_accent"
+                    android:drawableLeft="@drawable/ic_action_display_name_accent"
+                    android:drawablePadding="8dp"
+                    android:hint="Họ và tên"
+                    android:inputType="text" />
 
-            <EditText
-                android:id="@+id/edtConfirmPassword"
-                style="@style/EditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:drawableLeft="@drawable/ic_action_key_accent"
-                android:drawablePadding="8dp"
-                android:hint="Confirm Password"
-                android:inputType="textPassword"
-                android:drawableStart="@drawable/ic_action_key_accent" />
 
-            <Button
-                android:background="@color/colorAccent"
-                android:id="@+id/btnSignUp"
-                style="@style/ButtonYellow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Create account"
-                android:textAllCaps="true"
-                android:textAppearance="@style/QuicksandBold" />
+                <EditText
+                    android:id="@+id/edtPassword"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:drawableLeft="@drawable/ic_action_password_red"
+                    android:drawablePadding="8dp"
+                    android:hint="Mật khẩu"
+                    android:inputType="textPassword" />
 
+                <EditText
+                    android:id="@+id/edtConfirmPassword"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:drawableStart="@drawable/ic_action_key_accent"
+                    android:drawableLeft="@drawable/ic_action_key_accent"
+                    android:drawablePadding="8dp"
+                    android:hint="Nhập lại mật khẩu"
+                    android:inputType="textPassword" />
+
+                <Button
+                    android:id="@+id/btnSignUp"
+                    style="@style/ButtonYellow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorAccent"
+                    android:text="Đăng kí"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/QuicksandBold" />
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
 </LinearLayout>

@@ -8,16 +8,37 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.chatapp.threadripper.authentication.LoginActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_top"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorAccent"
+         >
+
+
+        <TextView
+            android:fontFamily="@font/helveticaneuemedium"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/sp20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng nhập"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+
+
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:padding="@dimen/dp24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/dp24">
 
             <TextView
                 android:id="@+id/tvCheckConnection"
@@ -43,7 +64,7 @@
                 android:layout_marginBottom="15dp"
                 android:drawableLeft="@drawable/ic_action_account_box_accent"
                 android:drawablePadding="8dp"
-                android:hint="Username"
+                android:hint="Tên đăng nhập"
                 android:inputType="text" />
 
             <EditText
@@ -54,14 +75,14 @@
                 android:layout_marginBottom="20dp"
                 android:drawableLeft="@drawable/ic_action_password_red"
                 android:drawablePadding="8dp"
-                android:hint="Password"
+                android:hint="Mật khẩu"
                 android:inputType="textPassword" />
 
 
             <LinearLayout
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -74,28 +95,28 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:text="Forgot password?"
+                        android:text="Quên mật khẩu?"
                         android:textAppearance="@style/Light"
-                        android:textColor="@color/colorTextBlack" />
+                        android:textColor="@color/colorAccent" />
 
                     <TextView
                         android:id="@+id/tvSignUp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:text="Create account?"
+                        android:text="Đăng kí"
                         android:textAppearance="@style/Light"
-                        android:textColor="@color/colorTextBlack" />
+                        android:textColor="@color/colorAccent" />
 
                 </RelativeLayout>
 
                 <Button
-                    android:background="@color/colorAccent"
                     android:id="@+id/btnLogin"
                     style="@style/ButtonYellow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Login"
+                    android:background="@color/colorAccent"
+                    android:text="Đăng nhập"
                     android:textAllCaps="true"
                     android:textAppearance="@style/QuicksandBold" />
             </LinearLayout>
