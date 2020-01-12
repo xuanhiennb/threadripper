@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_white"
+    tools:context=".authenticated.activity.CreatePostActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_create_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cv_avatar"
+            android:layout_width="@dimen/dp86"
+            android:layout_height="@dimen/dp86"
+            android:layout_gravity="center|bottom"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginLeft="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp16"
+            android:src="@drawable/placeholder_user_avatar" />
+
+        <TextView
+            android:id="@+id/tv_display_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_toEndOf="@id/cv_avatar"
+            android:layout_toRightOf="@id/cv_avatar"
+            android:fontFamily="@font/helveticaneuemedium"
+            android:text="@string/app_name"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/sp18"
+            tools:targetApi="jelly_bean" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_display_name"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_toEndOf="@id/cv_avatar"
+            android:layout_toRightOf="@id/cv_avatar"
+            android:background="@drawable/background_public"
+            android:drawableRight="@drawable/ic_vt_public"
+            android:drawablePadding="@dimen/dp8"
+            android:padding="@dimen/dp8"
+            android:text="Mọi người" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/cv_avatar"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/line1"
+            android:layout_marginTop="@dimen/dp16">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edt_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/text_white"
+                    android:gravity="top"
+                    android:hint="Bạn đang nghĩ gì?"
+                    android:inputType="textMultiLine"
+                    android:minLines="4"
+                    android:paddingStart="@dimen/dp8"
+                    android:paddingEnd="@dimen/dp8"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/sp14" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="@dimen/dp16"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btn_picture"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/btn_transparent_circle"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_action_add_photo_alternate"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageButton
+                        android:id="@+id/btn_capture"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/btn_transparent_circle"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_action_linked_camera"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/img_image"
+                        android:layout_width="@dimen/dp120"
+                        android:layout_height="@dimen/dp120"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

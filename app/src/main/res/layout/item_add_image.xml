@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView android:id="@+id/tv_add_image"
+    android:layout_width="120dp"
+    android:text="Thêm ảnh"
+    android:textSize="14sp"
+    android:gravity="center"
+    android:textColor="@color/colorAccent"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/bg_add_image"
+    android:layout_height="120dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
