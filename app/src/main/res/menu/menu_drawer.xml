@@ -21,7 +21,7 @@
             android:id="@+id/nav_chats"
             app:actionViewClass="android.widget.TextView"
             android:icon="@drawable/ic_action_chat"
-            android:title="Messages Chat" />
+            android:title="Tin nhắn" />
         <!--<item-->
         <!--android:id="@+id/nav_groups"-->
         <!--app:actionViewClass="android.widget.TextView"-->
@@ -31,6 +31,6 @@
             android:id="@+id/nav_call"
             app:actionViewClass="android.widget.TextView"
             android:icon="@drawable/ic_action_missed_video_call"
-            android:title="Audio/Video Call" />
+            android:title="Cuộc gọi" />
     </group>
 </menu>

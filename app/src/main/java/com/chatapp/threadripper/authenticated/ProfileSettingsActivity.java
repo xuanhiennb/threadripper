@@ -1,7 +1,7 @@
 package com.chatapp.threadripper.authenticated;
 
 import android.Manifest;
-import android.annotation.TargetApi;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
@@ -55,7 +54,7 @@ public class ProfileSettingsActivity extends BaseMainActivity {
         initViews();
         setListeners();
 
-        configHideKeyboardOnTouchOutsideEditText(findViewById(R.id.wrapperView));
+        //  configHideKeyboardOnTouchOutsideEditText(findViewById(R.id.wrapperView));
 
         initDetectNetworkStateChange();
 
@@ -129,6 +128,7 @@ public class ProfileSettingsActivity extends BaseMainActivity {
         edtDisplayName.setInputType(InputType.TYPE_NULL);
         edtDisplayName.setCursorVisible(false);
 
+        tvUsername.setText(Preferences.getCurrentUser().getUsername());
         tvEmail.setText(Preferences.getCurrentUser().getEmail());
         edtDisplayName.setText(Preferences.getCurrentUser().getDisplayName());
 
@@ -242,8 +242,9 @@ public class ProfileSettingsActivity extends BaseMainActivity {
         });
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
-        // >= 23
+    //    @TargetApi(Build.VERSION_CODES.M)
+    // >= 23
+    @SuppressLint("NewApi")
     void handleCaptureCamera() {
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, Constants.REQUEST_CODE_PERMISSION_IMAGE_CAPTURE);
@@ -253,8 +254,9 @@ public class ProfileSettingsActivity extends BaseMainActivity {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
-        // >= 23
+    //    @RequiresApi(api = Build.VERSION_CODES.M)
+    // >= 23
+    @SuppressLint("NewApi")
     void handleSelectImage() {
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constants.REQUEST_CODE_PERMISSION_READ_EXTERNAL);
@@ -271,19 +273,20 @@ public class ProfileSettingsActivity extends BaseMainActivity {
     }
 
     void handleChangeAvatar() {
-        SweetDialog.showOption(this, "Choose avatar",
-                "Would you like to get a photo from camera or gallery?", "Camera", "Gallery",
+        SweetDialog.showOption(this, "Chọn ảnh",
+                "Chọn ảnh từ máy ảnh hoặc thư viện", "Máy ảnh", "Thư viện",
                 new SweetDialog.OnCallbackOptionsListener() {
                     @Override
                     public void onSelectOption1() {
                         handleCaptureCamera();
                     }
 
+                    @SuppressLint("NewApi")
                     @Override
                     public void onSelectOption2() {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            handleSelectImage();
-                        }
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        handleSelectImage();
+//                        }
                     }
                 });
     }

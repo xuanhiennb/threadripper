@@ -43,6 +43,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".authenticated.ProfileSettingsActivity"
             android:theme="@style/AppTheme" />
         <activity

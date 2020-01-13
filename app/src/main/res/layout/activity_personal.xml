@@ -48,15 +48,15 @@
             android:layout_gravity="center|bottom"
             android:src="@drawable/placeholder_user_avatar" />
 
-        <ImageView
-            android:id="@+id/ic_edit_avatar"
-            android:layout_width="@dimen/dp18"
-            android:layout_height="@dimen/dp18"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="@dimen/dp4"
-            android:background="#C5BBBB"
-            android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/ic_camera_edit_avatar" />
+<!--        <ImageView-->
+<!--            android:id="@+id/ic_edit_avatar"-->
+<!--            android:layout_width="@dimen/dp18"-->
+<!--            android:layout_height="@dimen/dp18"-->
+<!--            android:layout_gravity="end|bottom"-->
+<!--            android:layout_margin="@dimen/dp4"-->
+<!--            android:background="#C5BBBB"-->
+<!--            android:contentDescription="@string/app_name"-->
+<!--            app:srcCompat="@drawable/ic_camera_edit_avatar" />-->
     </FrameLayout>
 
     <TextView
