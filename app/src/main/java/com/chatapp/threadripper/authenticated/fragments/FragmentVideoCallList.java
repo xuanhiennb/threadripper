@@ -71,7 +71,7 @@ public class FragmentVideoCallList extends Fragment implements SocketReceiver.On
         View view = inflater.inflate(R.layout.fragment_video_call_list, null, false);
 
         getActivity().supportInvalidateOptionsMenu();
-        ((LayoutFragmentActivity) getActivity()).changeTitle(R.id.toolbar, "Video Call");
+        ((LayoutFragmentActivity) getActivity()).changeTitle(R.id.toolbar, "Cuộc gọi");
 
         tvNoAnyFriends = (TextView) view.findViewById(R.id.tvNoAnyFriends);
 

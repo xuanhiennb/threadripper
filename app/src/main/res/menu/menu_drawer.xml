@@ -11,11 +11,11 @@
         <item android:id="@+id/nav_news"
             android:title="Bảng tin"
             app:actionViewClass="android.widget.TextView"
-            android:icon="@drawable/ic_action_chat"/>
+            android:icon="@drawable/ic_news"/>
         <item android:id="@+id/nav_personal"
             android:title="Trang cá nhân"
             app:actionViewClass="android.widget.TextView"
-            android:icon="@drawable/ic_action_chat"/>
+            android:icon="@drawable/ic_personal"/>
 
         <item
             android:id="@+id/nav_chats"

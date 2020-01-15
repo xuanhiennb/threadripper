@@ -112,7 +112,7 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         setRipperOnClickListener();
     }
 
-    private void handleStartCalling( boolean callVideoOrAudio) {
+    private void handleStartCalling(boolean callVideoOrAudio) {
         Intent intent = new Intent(this, VideoCallActivity.class);
 
         User user = new User();
@@ -121,7 +121,7 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         user.setDisplayName(displayName);
         user.setPrivateConversationId(conversationId);
 
-        String channelId = "THREADRIPPER_CALL_"
+        String channelId = "THREADRIPPER_MESSAGE_CALL_"
                 + Preferences.getCurrentUser().getUsername() + "_"
                 + user.getUsername();
 
@@ -182,7 +182,7 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         // mIntentFilter.addAction(Constants.ACTION_STRING_RECEIVER_LEAVE);
         mIntentFilter.addAction(Constants.ACTION_STRING_RECEIVER_TYPING);
         mIntentFilter.addAction(Constants.ACTION_STRING_RECEIVER_READ);
-        mIntentFilter.addAction(Constants.ACTION_STRING_RECEIVER_CALL);
+//        mIntentFilter.addAction(Constants.ACTION_STRING_RECEIVER_CALL);
 
         mSocketReceiver.setListener(this);
     }
@@ -340,9 +340,9 @@ public class ConversationActivity extends BaseMainActivity implements SocketRece
         }
     }
 
-//    @TargetApi(Build.VERSION_CODES.M)
-@SuppressLint("NewApi")
-void handleCaptureCamera() {
+    //    @TargetApi(Build.VERSION_CODES.M)
+    @SuppressLint("NewApi")
+    void handleCaptureCamera() {
         btnCaptureImage.setImageResource(R.drawable.ic_action_linked_camera_accent);
 
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {

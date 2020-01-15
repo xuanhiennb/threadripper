@@ -25,10 +25,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute"
         tools:replace="android:icon">
+        <activity android:name=".authenticated.activity.NewsActivity"></activity>
         <activity
+            android:name=".authenticated.activity.CreatePostActivity"
             android:theme="@style/ThemeLogin"
-            android:windowSoftInputMode="adjustResize"
-            android:name=".authenticated.activity.CreatePostActivity" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".authenticated.activity.PersonalActivity"
             android:theme="@style/AppThemeFull"
@@ -43,9 +44,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:windowSoftInputMode="adjustResize"
             android:name=".authenticated.ProfileSettingsActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".authenticated.SearchUsersActivity"
             android:launchMode="singleTask"

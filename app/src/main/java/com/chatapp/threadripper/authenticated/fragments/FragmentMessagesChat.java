@@ -79,7 +79,7 @@ public class FragmentMessagesChat extends Fragment implements SocketReceiver.OnC
         View view = inflater.inflate(R.layout.fragment_messages_chat, null, false);
 
         getActivity().supportInvalidateOptionsMenu();
-        ((LayoutFragmentActivity) getActivity()).changeTitle(R.id.toolbar, "Messages");
+        ((LayoutFragmentActivity) getActivity()).changeTitle(R.id.toolbar, "Tin nhắn");
 
         initViews(view);
 

@@ -1,5 +1,6 @@
 package com.chatapp.threadripper.authenticated;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -49,7 +51,7 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
         FragmentTransaction ft;
 
         // Default Fragment is Messages Chat Screen
-        setupToolbar(R.id.toolbar, "Messages");
+        setupToolbar(R.id.toolbar, "Tin nhắn");
 
         FragmentMessagesChat fragmentMessagesChat = new FragmentMessagesChat();
         ft = getSupportFragmentManager().beginTransaction();
@@ -125,6 +127,11 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
         } else {
             //Double back to exit
             this.setupDoubleBackToExit();
+            //hide keyboard
+            InputMethodManager inputMethodManager = (InputMethodManager)
+                    navigationView.getContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(navigationView.getWindowToken(), 0);
+
         }
     }
 
@@ -170,8 +177,8 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
                 startActivity(new Intent(this, ProfileSettingsActivity.class));
                 break;
             case R.id.nav_logout:
-                SweetDialog.showWarningMessageWithCancel(this, "Alert",
-                        "Are you sure to logout your current account?",
+                SweetDialog.showWarningMessageWithCancel(this, "Thông báo",
+                        "Bạn có chắc chắn muốn đăng xuất?",
                         new SweetDialog.OnCallbackListener() {
                             @Override
                             public void onConfirm() {

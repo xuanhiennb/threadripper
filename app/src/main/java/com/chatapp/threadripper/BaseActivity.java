@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
-import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -45,12 +44,12 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void registerNetworkBroadcastForNougat() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             registerReceiver(mNetworkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             registerReceiver(mNetworkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        }
+//        }
     }
 
     protected void unregisterNetworkChanges() {
@@ -80,7 +79,7 @@ public class BaseActivity extends AppCompatActivity {
 
     public static void dialogStateConnectionChanged(boolean value) {
         if (value) {
-            tvCheckConnection.setText("Connection is established");
+            tvCheckConnection.setText("Kết nối được thiết lập");
             tvCheckConnection.setBackgroundColor(Color.rgb(83, 185, 15));
             tvCheckConnection.setTextColor(Color.WHITE);
 
@@ -90,7 +89,7 @@ public class BaseActivity extends AppCompatActivity {
 
         } else {
             tvCheckConnection.setVisibility(View.VISIBLE);
-            tvCheckConnection.setText("Could not connect to internet");
+            tvCheckConnection.setText("Không thể kết nối với internet");
             tvCheckConnection.setBackgroundColor(Color.RED);
             tvCheckConnection.setTextColor(Color.WHITE);
         }
