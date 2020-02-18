@@ -25,7 +25,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute"
         tools:replace="android:icon">
-        <activity android:name=".authenticated.activity.NewsActivity"></activity>
+        <activity android:name=".authenticated.activity.NewsFeedActivity"></activity>
         <activity
             android:name=".authenticated.activity.CreatePostActivity"
             android:theme="@style/ThemeLogin"
