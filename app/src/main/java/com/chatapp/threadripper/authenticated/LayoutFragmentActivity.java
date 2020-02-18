@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.chatapp.threadripper.R;
 import com.chatapp.threadripper.api.CacheService;
 import com.chatapp.threadripper.api.SocketManager;
+import com.chatapp.threadripper.authenticated.activity.NewsFeedActivity;
 import com.chatapp.threadripper.authenticated.activity.PersonalActivity;
 import com.chatapp.threadripper.authenticated.fragments.FragmentMessagesChat;
 import com.chatapp.threadripper.authenticated.fragments.FragmentVideoCallList;
@@ -159,6 +160,7 @@ public class LayoutFragmentActivity extends BaseMainActivity implements Navigati
 
         switch (item.getItemId()) {
             case R.id.nav_news:
+                startActivity(new Intent(this, NewsFeedActivity.class));
                 break;
             case R.id.nav_personal:
                 startActivity(new Intent(this, PersonalActivity.class));
